@@ -14,7 +14,7 @@ import os
 def fileRead(name):
     with open(name, 'r') as file:
         read = file.read()
-            print(read)
+        print(read)
 
 fileRead('foo.txt')
 # Open up a file called "bar.txt" (which doesn't exist yet) for
