@@ -31,28 +31,47 @@ import sys
 import calendar
 from datetime import datetime
 
-day = datetime.today()
-month = day.month
-year = day.year
+# day = datetime.today()
+# month = day.month
+# year = day.year
 
-if len(sys.argv) > 1:
-  try:
-    month = int(sys.argv[1])
-    if month < 1 or month > 12:
-      raise ValueError("invalid month")
-  except ValueError as error:
-      print("invalid format")
-      for arg in error.args:
-          print(error.args)
-      exit()
-      
-if len(sys.argv) > 2:
-  try:
-    year = int(sys.argv[2])
-  except ValueError as error:
-    print("invalid format")
-    for arg in error.args:
-        print(error.args)
-    exit()
+# if len(sys.argv) > 1:
+#   try:
+#     month = int(sys.argv[1])
+#     if month < 1 or month > 12:
+#       raise ValueError("invalid month")
+#   except ValueError as error:
+#       print("invalid format")
+#       for arg in error.args:
+#           print(error.args)
+#       exit()
+# if len(sys.argv) > 2:
+#   try:
+#     year = int(sys.argv[2])
+#   except ValueError as error:
+#     print("invalid format")
+#     for arg in error.args:
+#         print(error.args)
+#     exit()
 
-calendar.prmonth(year,month)        
+# calendar.prmonth(year,month)        
+
+
+today = datetime.now()
+m = today.month
+y = today.year
+
+args = sys.argv[1:]
+
+if args:
+      m = int(args[0])
+      if len(args) > 1:
+            y = int(args[0])
+            m = int(args[1])
+
+if len(args) > 2:
+    print("Too many arguments - please enter a month and a year")
+elif m < 1 or 12 < m:
+    print("Month must be a number between 1 and 12")
+else:
+    print(calendar.month(y, m))
