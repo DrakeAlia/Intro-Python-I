@@ -23,7 +23,7 @@ fileRead('foo.txt')
 # sure that it contains what you expect it to contain
 
 # YOUR CODE HERE
-with open('bar.text', 'w') as new:
+with open('bar.txt', 'w') as new:
     new.write('1\n')
     new.write('2\n')
     new.write('3\n')
