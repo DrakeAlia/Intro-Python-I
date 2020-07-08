@@ -66,11 +66,11 @@ args = sys.argv[1:]
 if args:
       m = int(args[0])
       if len(args) > 1:
-            y = int(args[0])
-            m = int(args[1])
+            y = int(args[1])
+            m = int(args[0])
 
 if len(args) > 2:
-    print("Too many arguments - please enter a month and a year")
+    print("Too many arguments made, Only month and year")
 elif m < 1 or 12 < m:
     print("Month must be a number between 1 and 12")
 else:
